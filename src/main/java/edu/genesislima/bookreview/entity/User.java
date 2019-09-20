@@ -1,4 +1,4 @@
-package edu.genesislima.microblog.entity;
+package edu.genesislima.bookreview.entity;
 
 import java.io.Serializable;
 
