@@ -1,34 +1,32 @@
 package edu.genesislima.bookreview.entity;
 
-import java.io.Serializable;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
 
 @Entity
 @Data
-@Table(name="TB_BOOK")
-public class Book implements Serializable {
-
+@Table(name="TB_REVIEW")
+public class Review {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
-	private String name;
-	private String description;
+	private String review;
 	
 	@ManyToOne
-	@JoinColumn(name="category_id")
-	private Category category;
+	@JoinColumn(name="user_id")
+	private User user;
 	
-	@OneToMany(mappedBy="book")
-	private List<Review> review;
+	@ManyToOne
+	@JoinColumn(name="book_id")
+	private Book book;
+	
+
 }

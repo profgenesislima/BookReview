@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 @Entity
 @Data
-@Table(name="CATEGORY")
+@Table(name="TB_CATEGORY")
 public class Category implements Serializable{
 
 	/**
